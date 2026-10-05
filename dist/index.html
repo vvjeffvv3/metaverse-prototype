@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#167d79">
+  <meta name="description" content="실제 설계도와 사진을 반영한 PLAYDATA 캠퍼스. 캐릭터로 라운지, 강의실, 상담실을 둘러보세요.">
+  <title>PLAYDATA · 캠퍼스 메타버스</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23167d79'/%3E%3Cpath d='M9 24V8h8a6 6 0 0 1 0 12h-4v4zm4-8h4a2 2 0 0 0 0-4h-4z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="PLAYDATA 캠퍼스 처음 화면"><span class="brand-mark">P<span></span></span><span>PLAYDATA<small>VIRTUAL CAMPUS</small></span></a>
+    <div class="campus-name"><span class="divider"></span><span>플레이데이터 캠퍼스</span><span class="badge">맵 탐방</span></div>
+    <div class="top-actions"><button id="referenceBtn" class="btn quiet">설계도 보기</button><a id="exportBtn" class="btn solid" href="assets/campus-map.png" download="PLAYDATA-campus-map.png">맵 PNG 저장</a></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar">
+      <div class="sidebar-heading"><span class="eyebrow">CAMPUS GUIDE</span><h1>공간 둘러보기</h1><p>원하는 공간을 선택해 이동하세요.</p></div>
+      <nav id="roomNav" aria-label="캠퍼스 공간"></nav>
+      <div class="side-footer"><span class="avatar-dot"></span><div><strong>나의 캐릭터</strong><span>자유롭게 둘러보세요</span></div><button id="colorBtn" aria-label="캐릭터 옷 색상 변경" class="color-button"><span></span></button></div>
+    </aside>
+    <section class="map-shell" aria-label="메타버스 캠퍼스">
+      <div class="map-toolbar"><div class="map-title"><span class="map-symbol">⌘</span><strong>캠퍼스 맵</strong><span id="currentRoom">라운지 1</span></div><div class="view-buttons"><button id="overviewBtn" class="toolbtn" aria-label="전체 맵 보기">전체 보기</button><button id="followBtn" class="toolbtn" aria-pressed="false">내 위치</button><button id="fullscreenBtn" class="toolbtn" aria-label="맵 전체 화면">⛶</button></div></div>
+      <div id="viewport" class="viewport">
+        <canvas id="mapCanvas" tabindex="0" role="img" aria-label="PLAYDATA 캠퍼스 지도. 복도 오른쪽은 라운지 1, 왼쪽은 라운지 2입니다. 방향키 또는 WASD로 이동하고, 바닥을 클릭하면 해당 위치로 걸어갑니다.">방향키로 움직이는 PLAYDATA 캠퍼스 지도</canvas>
+        <div class="map-caption"><span class="caption-icon">P</span><div><strong>PLAYDATA CAMPUS</strong><span>함께 배우는 공간</span></div></div>
+        <div id="interactionPrompt" class="interaction-prompt" hidden><kbd>E</kbd><span></span><button aria-label="가까운 시설 안내 보기">보기</button></div>
+        <div class="map-controls"><button id="zoomIn" aria-label="확대">+</button><span id="zoomLabel">100%</span><button id="zoomOut" aria-label="축소">−</button></div>
+        <div class="minimap-frame"><canvas id="minimap" width="220" height="110" aria-label="전체 맵에서 나의 위치"></canvas><span>전체 맵</span></div>
+        <div class="touch-pad" aria-label="이동 조작"><button data-move="up" aria-label="위로 이동">▲</button><div><button data-move="left" aria-label="왼쪽으로 이동">◀</button><button data-move="down" aria-label="아래로 이동">▼</button><button data-move="right" aria-label="오른쪽으로 이동">▶</button></div></div>
+        <div id="toast" class="toast" role="status" hidden></div>
+      </div>
+      <footer class="map-footer"><div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>또는 방향키로 이동</span><i></i><span>바닥 클릭으로 이동</span></div><div><span>드래그 · 맵 이동</span><i></i><kbd>E</kbd><span>시설 안내</span></div></footer>
+    </section>
+  </main>
+  <dialog id="detailDialog" aria-labelledby="detailTitle"><div class="dialog-top"><div><span id="detailEyebrow" class="eyebrow">SPACE GUIDE</span><h2 id="detailTitle"></h2></div><button id="closeDialog" class="close-button" aria-label="안내 닫기">×</button></div><img id="detailImage" alt="" hidden><div class="dialog-content"><p id="detailText"></p><div id="detailTags" class="detail-tags"></div><div class="dialog-actions"><button id="detailMove" class="btn solid">이 공간으로 이동</button><button id="detailClose" class="btn quiet">닫기</button></div></div></dialog>
+  <script src="map-data.js"></script>
+  <script src="navigation.js"></script>
+  <script src="campus.js"></script>
+</body>
+</html>
