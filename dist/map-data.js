@@ -3,16 +3,16 @@ window.CampusData = (() => {
   const width=1632, height=820, layoutShiftX=72, rooms=[], walls=[], objects=[];
   const entrance={id:'main-entrance',name:'외부 출입구',x:1230,y:631,w:61,h:76,floor:'stone',target:[1255,678]};
   const room=(id,name,x,y,w,h,floor,target,extra={})=>rooms.push({id,name,x,y,w,h,floor,target,...extra});
-  room('left-top','강의실 · 상',20,24,300,243,'class',[289,182],{front:'bottom',description:'강의실 3·4와 비슷한 크기로 넓힌 강의실입니다. 학생 책상을 4열·3줄로 배치했고, 강의 전면은 1·2번과 같은 아래쪽 방향입니다.'});
-  room('left-middle','강의실 · 중',20,267,300,243,'class',[289,379],{front:'bottom',description:'강의실 3·4와 비슷한 크기로 넓힌 강의실입니다. 학생 책상을 4열·3줄로 배치했고, 강의 전면은 1·2번과 같은 아래쪽 방향입니다.'});
-  room('left-bottom','강의실 · 하',20,510,300,243,'class',[289,589],{front:'bottom',description:'강의실 3·4와 비슷한 크기로 넓힌 강의실입니다. 학생 책상을 4열·3줄로 배치했고, 강의 전면은 1·2번과 같은 아래쪽 방향입니다.'});
+  room('left-top','강의실 7',20,24,300,243,'class',[289,182],{front:'bottom',description:'강의실 3·4와 비슷한 크기로 넓힌 강의실입니다. 학생 책상을 4열·3줄로 배치했고, 강의 전면은 1·2번과 같은 아래쪽 방향입니다.'});
+  room('left-middle','강의실 6',20,267,300,243,'class',[289,379],{front:'bottom',description:'강의실 3·4와 비슷한 크기로 넓힌 강의실입니다. 학생 책상을 4열·3줄로 배치했고, 강의 전면은 1·2번과 같은 아래쪽 방향입니다.'});
+  room('left-bottom','강의실 5',20,510,300,243,'class',[289,589],{front:'bottom',description:'강의실 3·4와 비슷한 크기로 넓힌 강의실입니다. 학생 책상을 4열·3줄로 배치했고, 강의 전면은 1·2번과 같은 아래쪽 방향입니다.'});
   room('lounge2','라운지 2',248,24,208,607,'wood',[278,332],{photo:'assets/lounge2.png',description:'창가의 긴 탁자 중앙선에 맞춰 위쪽에 PC 연결용 TV를 놓았습니다. 오른쪽 벽면 바 테이블, 맨 위 오른쪽 끝의 정수기와 분리수거함, 아래쪽 두 회의공간이 있습니다.',tags:['긴 탁자 위쪽 중앙 TV','벽면 바 테이블','오른쪽 끝 정수기']});
   room('class4','강의실 4',456,24,313,243,'class',[496,243],{front:'bottom',boardInsetLeft:74,description:'강의실 1·2와 같은 방향으로, 아래쪽에 강의 전면과 강사 책상이 있습니다. 출입문은 중앙 복도의 왼쪽 끝에 있습니다.'});
   room('class3','강의실 3',769,24,298,243,'class',[1027,243],{front:'bottom',boardInsetRight:73,description:'강의실 1·2와 같은 방향으로, 아래쪽에 강의 전면과 강사 책상이 있습니다. 출입문은 중앙 복도의 오른쪽 끝에 있습니다.'});
   room('corridor','복도',456,267,611,102,'hall',[758,322]);
   room('class2','강의실 2',456,369,313,262,'class',[496,393],{front:'bottom',description:'강의 전면이 건물 바깥쪽인 아래쪽 벽을 향하도록 책상과 의자를 뒤집었습니다. 출입문은 중앙 복도의 왼쪽 끝에 있습니다.'});
   room('class1','강의실 1',769,369,298,262,'class',[1027,393],{front:'bottom',description:'강의 전면이 건물 바깥쪽인 아래쪽 벽을 향하도록 책상과 의자를 뒤집었습니다. 출입문은 중앙 복도의 오른쪽 끝에 있습니다.'});
-  room('lounge1','라운지 1',1067,24,332,607,'wood',[1190,437],{photo:'assets/lounge1.png',description:'브라운 벽을 따라 작은 흰 탁자와 원형 스툴이 있고, 위아래의 소파가 마주보는 라운지입니다. 휴게 공간과 안내 데스크 사이의 아래쪽 외벽에는 바깥으로 출입하는 유리 슬라이딩 문이 있습니다. 안내 데스크에는 직원 좌석 두 개가 있습니다. 위쪽의 긴 탁자·노트북, 세 회의 탁자의 TV, 기둥 책장과 정수기·커피머신·분리수거·프린터도 이용할 수 있습니다.',tags:['마주보는 소파','외부 유리 출입문','안내 데스크 · 좌석 2개','회의 · 휴게 설비']});
+  room('lounge1','라운지 1',1067,24,332,607,'wood',[1190,437],{photo:'assets/lounge1.png',description:'화분을 정리하고, 오른쪽 기둥 위에 세로로 붙인 콘센트 작업 탁자와 네 좌석을 배치한 라운지입니다. 두 기둥 사이 통로가 비도록 중앙 위쪽에 나무 테두리 칠판에 playdata가 적힌 안내 게시판을 놓았습니다. 브라운 벽 쪽에는 마주보는 소파와 흰 탁자, 원형 스툴이 있고, 아래쪽 외벽의 유리 출입문과 두 좌석의 안내 데스크로 이어집니다. 위쪽 회의 탁자와 TV, 기둥 책장과 휴게 설비도 이용할 수 있습니다.',tags:['콘센트 작업 탁자','playdata 칠판 게시판','마주보는 소파','외부 유리 출입문']});
   room('office','직원실',1399,26,117,321,'office',[1416,304]);
   room('meeting','회의실',1399,347,117,198,'meeting',[1417,501]);
   room('stairs','계단',1399,545,117,86,'stone',[1417,603]);
@@ -67,6 +67,8 @@ window.CampusData = (() => {
     chair(356,yy+17,'down');chair(384,yy+17,'down');chair(356,yy+68,'up');chair(384,yy+68,'up');
     tv(432,yy+35,14,34,'lounge2');obj('laptop',370,yy+39,17,13,{solid:false});
   }
+  // Keep the second meeting room's entrance clear; place the extinguisher beside the right-hand jamb when entering.
+  obj('fire-extinguisher',293,594,16,22,{id:'extinguisher-meeting2',name:'소화기',roomId:'lounge2',description:'라운지 2에서 회의공간 2로 들어가기 직전, 오른쪽 문틀 옆에 배치한 소화기입니다.',tags:['소화기','회의공간 2 입구']});
   obj('counter',1074,32,171,36);obj('water',1081,35,24,33,{name:'정수기',roomId:'lounge1',description:'라운지 1 맨 위에 있습니다. 오른쪽에는 커피머신과 분리수거함이 이어집니다.',tags:['정수기','휴게 설비']});
   obj('coffee-machine',1115,38,25,28,{name:'커피머신',roomId:'lounge1',description:'라운지 1 정수기 바로 옆에 놓인 커피머신입니다. 오른쪽의 분리수거함을 함께 이용할 수 있습니다.',tags:['정수기 옆','커피']});
   for(let i=0;i<3;i++)obj('bin',1150+i*31,40,25,26,{color:['#647779','#65a195','#cca966'][i],name:'분리수거함',roomId:'lounge1',description:'커피머신 옆의 세 분리수거함입니다. 오른쪽에는 사무용 프린터와 창고가 있습니다.'});
@@ -75,15 +77,19 @@ window.CampusData = (() => {
   desk(1125,110,158,30,{color:'#e1c598',name:'노트북용 긴 탁자',roomId:'lounge1',description:'기존 대형 TV 자리를 긴 탁자로 바꾸고, 탁자 위에 노트북 한 대를 놓았습니다.',tags:['긴 탁자','노트북 1대']});obj('laptop',1192,113,24,19,{solid:false,roomId:'lounge1'});
   [1088,1165,1241].forEach((x,i)=>{desk(x,175,37,81,{color:'#f5f3e9',name:`팀 회의 탁자 ${i+1}`,roomId:'lounge1'});tv(x-6,156,49,17,'lounge1',{name:`PC 연결 TV · ${i+1}번 탁자`,description:`라운지 1의 ${i+1}번 회의 탁자에 배치한 PC 연결용 TV입니다. 세 탁자에 한 대씩 놓았습니다.`});for(let j=0;j<2;j++){chair(x-19,184+j*39,'right','#657f88');chair(x+42,184+j*39,'left','#657f88');}});
   obj('laptop',1097,181,17,14,{solid:false});obj('notebook',1174,216,18,13,{solid:false});obj('laptop',1250,184,17,14,{solid:false});
-  plant(1347,112,26);plant(1348,262,25);
-  for(const x of [1144,1284]){obj('pillar',x,374,40,40);obj('bookshelf',x-7,365,54,15,{name:'기둥 책장',roomId:'lounge1',photo:'assets/books.png',description:'라운지 1의 두 기둥에 사진 속 흰 프레임과 나무 선반의 책장을 반영했습니다. 색색의 책들이 둘러진 작은 도서 공간입니다.',tags:['기둥 주변 책장','흰 프레임','나무 선반']});obj('bookshelf',x-7,413,54,15,{name:'기둥 책장',roomId:'lounge1',photo:'assets/books.png'});obj('bookshelf-side',x+38,376,14,35,{name:'기둥 책장',roomId:'lounge1',photo:'assets/books.png'});}
+  obj('noticeboard',1210,285,68,74,{id:'lounge1-noticeboard',name:'PLAYDATA 안내 게시판',roomId:'lounge1',photo:false,collision:{x:2,y:64,w:64,h:11},description:'두 기둥 사이 통로를 막지 않도록 중앙 위쪽으로 옮긴 이동식 칠판입니다. 아래 받침만 바닥을 차지하므로 칠판 뒤쪽으로 지나갈 수 있습니다. 사진처럼 나무 테두리와 받침대를 두고, 검은 칠판에 playdata를 적었습니다.',tags:['아래 받침','뒤쪽 통행','playdata']});
+  desk(1306,276,28,115,{id:'lounge1-worktable',color:'#e1c598',powered:true,name:'콘센트 작업 탁자',roomId:'lounge1',photo:false,description:'오른쪽 기둥 위에 붙여 세로로 배치한 긴 작업 탁자입니다. 탁자를 따라 콘센트 네 곳과 오른쪽의 네 좌석을 두어 노트북 작업을 할 수 있는 공간으로 표현했습니다.',tags:['기둥에 붙인 세로 탁자','콘센트 4곳','작업 좌석 4개']});
+  for(let i=0;i<4;i++)Object.assign(chair(1343,288+i*27,'left','#657f88'),{roomId:'lounge1',workSeat:true});
+  obj('laptop',1319,296,14,20,{orientation:'vertical',solid:false,roomId:'lounge1'});obj('laptop',1319,354,14,20,{orientation:'vertical',solid:false,roomId:'lounge1'});
+  // Move the right pillar and its bookshelves as one group, leaving a working area above.
+  for(const [x,y] of [[1144,374],[1300,400]]){obj('pillar',x,y,40,40,{roomId:'lounge1'});obj('bookshelf',x-7,y-9,54,15,{name:'기둥 책장',roomId:'lounge1',photo:'assets/books.png',description:'라운지 1의 두 기둥에 사진 속 흰 프레임과 나무 선반의 책장을 반영했습니다. 색색의 책들이 둘러진 작은 도서 공간입니다.',tags:['기둥 주변 책장','흰 프레임','나무 선반']});obj('bookshelf',x-7,y+39,54,15,{name:'기둥 책장',roomId:'lounge1',photo:'assets/books.png'});obj('bookshelf-side',x+38,y+2,14,35,{name:'기둥 책장',roomId:'lounge1',photo:'assets/books.png'});}
   // Rotate the photographed seating group so its wood wall follows classroom 1's side.
   obj('rug',1094,452,135,170,{solid:false,color:'#eadcc3'});obj('woodwall',1073,454,14,172,{name:'브라운 벽',roomId:'lounge1',photo:'assets/lounge1.png',description:'강의실 1 옆면에 붙어 있는 브라운색 벽입니다. 흰 탁자와 원형 스툴을 벽을 따라 배치했습니다.'});
   obj('sofa',1133,593,79,27,{dir:'up',color:'#a6a5a0',name:'소파 라운지',roomId:'lounge1',photo:'assets/lounge1.png'});obj('sofa',1149,449,64,25,{dir:'down',seats:2,color:'#949a98',name:'2칸 소파',roomId:'lounge1',description:'위쪽으로 옮겨 아래 소파와 마주보도록 배치한 2칸 소파입니다.'});
   obj('coffee',1175,533,26,50);obj('coffee',1169,477,24,39);
   for(const [x,y,c] of [[1120,549,'#899e9c'],[1122,503,'#d9b65f'],[1123,461,'#8753a0']])obj('ottoman',x,y,25,25,{color:c});
   for(const y of [573,514,456])obj('roundtable',1094,y,18,27);
-  obj('bookshelf-side',1216,585,13,37,{name:'라운지 책장',roomId:'lounge1',photo:'assets/books.png'});plant(1089,603,20);
+  obj('bookshelf-side',1216,585,13,37,{name:'라운지 책장',roomId:'lounge1',photo:'assets/books.png'});
   // The glass entrance belongs to the outside wall, between the seating rug and reception.
   obj('glass-wall',1210,630,28,3,{orientation:'horizontal',entrance:true});obj('glass-wall',1272,630,25,3,{orientation:'horizontal',entrance:true});
   obj('sliding-door',1238,626,34,12,{orientation:'horizontal',solid:false,name:'외부 유리 출입문',roomId:'lounge1',description:'휴게 공간과 안내 데스크 사이의 아래쪽 외벽에 있는 유리 슬라이딩 출입문입니다. 문이 열린 가운데 통로를 지나 바깥 출입구와 라운지를 오갈 수 있습니다.',tags:['외부 출입구','유리 슬라이딩 문']});
@@ -94,7 +100,8 @@ window.CampusData = (() => {
   desk(1440,386,41,91,{color:'#d8bd98'});for(let i=0;i<3;i++){chair(1421,391+i*30,'right');chair(1486,391+i*30,'left');}tv(1430,360,58,14,'meeting');plant(1479,509,21);
   obj('stairs',1407,553,100,70,{solid:false});
   for(const [x,id] of [[1297,'consult-b'],[1352,'consult-a']]){desk(x+24,654,20,28,{oval:true,name:'상담 테이블',roomId:id});obj('monitor',x+26,650,15,11,{solid:false});chair(x+1,656,'right','#aaa797');chair(x+24,690,'up','#aaa797');}
-  plant(568,286,22);plant(940,338,20);obj('floor-arrow',530,305,28,16,{solid:false});obj('floor-arrow',972,305,28,16,{solid:false});
+  obj('fire-extinguisher',761,280,16,22,{id:'extinguisher-corridor',name:'소화기',roomId:'corridor',description:'복도 위쪽, 강의실 3과 4의 경계에 있는 벽면에 배치한 소화기입니다.',tags:['소화기','강의실 3·4 사이']});
+  obj('floor-arrow',530,305,28,16,{solid:false});obj('floor-arrow',972,305,28,16,{solid:false});
   // Keep the lounge and main wing proportions while making room for the wider classrooms.
   for(const r of rooms)if(!r.id.startsWith('left-')){r.x+=layoutShiftX;r.target[0]+=layoutShiftX;}
   entrance.x+=layoutShiftX;entrance.target[0]+=layoutShiftX;

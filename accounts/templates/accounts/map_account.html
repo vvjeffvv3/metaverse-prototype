@@ -1,0 +1,8 @@
+<div class="account-nav">
+  <a class="account-name" href="{% url 'accounts:nickname' %}" title="닉네임 설정" aria-label="닉네임 설정">{{ nickname }}님 <span aria-hidden="true">✎</span></a>
+  <form id="campusLogoutForm" class="account-logout" method="post" action="{% url 'accounts:logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn quiet">로그아웃</button>
+  </form>
+</div>
+{{ presence_config|json_script:"campusPresenceConfig" }}

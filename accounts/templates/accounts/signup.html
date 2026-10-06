@@ -1,0 +1,12 @@
+{% extends "accounts/base.html" %}
+{% block title %}회원가입{% endblock %}
+{% block heading %}캠퍼스에 함께해요{% endblock %}
+{% block description %}아이디와 닉네임을 정하고 함께 캠퍼스를 둘러보세요.{% endblock %}
+{% block content %}
+  <form method="post" action="{% url 'accounts:signup' %}" class="auth-form">
+    {% csrf_token %}
+    {% include "accounts/form_fields.html" %}
+    <button type="submit" class="auth-submit">가입하고 시작하기</button>
+  </form>
+  <p class="auth-switch">이미 계정이 있나요? <a href="{% url 'accounts:login' %}">로그인</a></p>
+{% endblock %}
